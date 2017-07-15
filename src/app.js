@@ -11,7 +11,7 @@ export default class App extends React.Component {
         return (
             <div className='wrapper'>
                 <Header/>
-                <h1>Hello world!</h1>
+
                 { process.env.NODE_ENV !== 'production' ? <DevTools /> : null }
             </div>
         );
