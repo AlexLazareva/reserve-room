@@ -1,7 +1,7 @@
 import React from 'react';
 import { DevTools } from './utils/index';
 import { Header } from './components/index';
-import './styles.less';
+import './styles/styles.less';
 
 
 export default class App extends React.Component {
