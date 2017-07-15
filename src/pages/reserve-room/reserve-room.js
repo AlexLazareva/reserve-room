@@ -5,8 +5,8 @@ export default class ReserveRoomPage extends React.Component {
 
     render() {
         return (
-            <div>
-                
+            <div className='reserve-widget'>
+                <p>Резервировать здесь</p>
             </div>
         );
     }
