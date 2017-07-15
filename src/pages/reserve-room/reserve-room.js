@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.less';
 
 export default class ReserveRoomPage extends React.Component {
     static path = '/';
@@ -6,7 +7,9 @@ export default class ReserveRoomPage extends React.Component {
     render() {
         return (
             <div className='reserve-widget'>
-                <p>Резервировать здесь</p>
+                <div className='container'>
+                    <p>Резервировать здесь</p>
+                </div>
             </div>
         );
     }
