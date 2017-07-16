@@ -1,20 +1,19 @@
 import React from 'react';
-import { bindAll } from 'lodash';
-import { connect } from 'react-redux';
+/*import { bindAll } from 'lodash';
+import { connect } from 'react-redux';*/
 import classnames from 'classnames';
-import RoomsRow from './../../components/row/index';
+/*import moment from 'moment';*/
 import './styles.less';
+import Hour from '../../components/hour/hour';
 
-class ReserveRoomPage extends React.Component {
+export default class ReserveRoomPage extends React.Component {
     static path = '/';
 
-    constructor(props) {
+    constructor(props){
         super(props);
 
-        bindAll(this, ['isReserved']);
-
         this.state = {
-            isReserved: false
+            text: 'String'
         }
     }
 
@@ -27,20 +26,20 @@ class ReserveRoomPage extends React.Component {
                 <div className='reserve-widget__header'>
                     <h2 className='reserve-widget__title'>Бронирование переговорок</h2>
                 </div>
-                <RoomsRow onClick="" />
-                <p>Резервировать здесь</p>
+                <p>{ this.state.text }</p>
+                <Hour/>
             </div>
         );
     }
 }
 
-function mapStateToProps(state) {
+/*function mapStateToProps(state) {
     return {
         reserve: state.reserve
     };
 }
 
-export default connect(mapStateToProps)(ReserveRoomPage);
+export default connect(mapStateToProps)(ReserveRoomPage);*/
 
 
 

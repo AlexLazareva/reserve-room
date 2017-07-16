@@ -1,0 +1,29 @@
+@import "./../../styles/_variables";
+
+.hour {
+  display: flex;
+  width: 10%;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: @dark-gray;
+  background-color: #fff;
+  border: 1px solid #d8d8d8;
+  cursor: pointer;
+
+  &__value {
+    width: 80%;
+  }
+
+  & .is-active {
+    background-color: #d8d8d8;
+
+    .reserve-button {
+      display: none;
+    }
+  }
+}
+
+.reserve-button {
+  width: 20%;
+  text-align: right;
+}
