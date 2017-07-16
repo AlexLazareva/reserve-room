@@ -15,7 +15,10 @@ export default class App extends React.Component {
         return (
             <div className='wrapper'>
                 <Header/>
-                { this.props.children }
+                <div className='container'>
+                    { this.props.children }
+                </div>
+
                 { process.env.NODE_ENV !== 'production' ? <DevTools /> : null }
             </div>
         );
