@@ -44,7 +44,17 @@ export default class ReserveRoomPage extends React.Component {
                 <div className='reserve-widget__header'>
                     <h2 className='reserve-widget__title'>Бронирование переговорок</h2>
                 </div>
-                <RoomsList rooms={this.state.rooms}/>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Комната</th>
+                            <th>Month</th>
+                        </tr>
+
+                        <RoomsList rooms={this.state.rooms}/>
+                    </tbody>
+
+                </table>
 
             </div>
         );
