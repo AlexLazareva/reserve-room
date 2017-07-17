@@ -5,6 +5,7 @@ import classnames from 'classnames';
 /*import moment from 'moment';*/
 import './styles.less';
 import RoomsList from '../../components/rooms/rooms';
+import Day from "../../components/day/day";
 
 export default class ReserveRoomPage extends React.Component {
     static path = '/';
@@ -44,17 +45,20 @@ export default class ReserveRoomPage extends React.Component {
                 <div className='reserve-widget__header'>
                     <h2 className='reserve-widget__title'>Бронирование переговорок</h2>
                 </div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Комната</th>
-                            <th>Month</th>
-                        </tr>
+                <div className='table'>
+                    <div className='table__row-group'>
+                        <div className='table__row'>
+                            <div className='table__head'>Комната</div>
+                            <div className='table__head'>Month</div>
+                        </div>
 
                         <RoomsList rooms={this.state.rooms}/>
-                    </tbody>
+                        <tr>
+                            <Day/>
+                        </tr>
+                    </div>
 
-                </table>
+                </div>
 
             </div>
         );

@@ -11,23 +11,19 @@ export default class RoomsList extends Component {
 
     renderRooms(item, idx) {
         return (
-            <td key={ idx } className='rooms'>
+            <div key={ idx } className='rooms'>
                 <h3 className='rooms__title'>{ item.title }</h3>
                 <p className='rooms__description'>(до { item.person } персон)</p>
-            </td>
+            </div>
         );
     }
 
     render() {
 
         return (
-            <tr>
+            <div>
                 {this.props.rooms.map(this.renderRooms)}
-
-                <td>
-
-                </td>
-            </tr>
+            </div>
         );
     }
 }
