@@ -4,7 +4,7 @@ import { connect } from 'react-redux';*/
 import classnames from 'classnames';
 /*import moment from 'moment';*/
 import './styles.less';
-import Hour from '../../components/hour/hour';
+import RoomsList from '../../components/rooms/rooms';
 
 export default class ReserveRoomPage extends React.Component {
     static path = '/';
@@ -13,9 +13,27 @@ export default class ReserveRoomPage extends React.Component {
         super(props);
 
         this.state = {
-            text: 'String'
+            rooms: [
+                {
+                    title: 'Зеленая',
+                    person: 5
+                },
+                {
+                    title: 'Красная',
+                    person: 15
+                },
+                {
+                    title: 'Синяя',
+                    person: 25
+                },
+                {
+                    title: 'Фиолетовая',
+                    person: 25
+                }
+            ]
         }
     }
+
 
     render() {
         const { isReserved } = this.state;
@@ -26,8 +44,8 @@ export default class ReserveRoomPage extends React.Component {
                 <div className='reserve-widget__header'>
                     <h2 className='reserve-widget__title'>Бронирование переговорок</h2>
                 </div>
-                <p>{ this.state.text }</p>
-                <Hour/>
+                <RoomsList rooms={this.state.rooms}/>
+
             </div>
         );
     }
