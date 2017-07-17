@@ -51,11 +51,16 @@ export default class ReserveRoomPage extends React.Component {
                             <div className='table__head'>Комната</div>
                             <div className='table__head'>Month</div>
                         </div>
-
-                        <RoomsList rooms={this.state.rooms}/>
-                        <tr>
+                        <div>
+                            <RoomsList rooms={this.state.rooms}/>
                             <Day/>
-                        </tr>
+                            <Day/>
+                            <Day/>
+                            <Day/>
+                            <Day/>
+                        </div>
+
+
                     </div>
 
                 </div>
