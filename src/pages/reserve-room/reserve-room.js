@@ -60,7 +60,7 @@ export default class ReserveRoomPage extends React.Component {
                             </th>
                         </tr>
                         <tr>
-                            { weeks.map((w, i) => <td key={i}>{ w }</td>)}
+                            { weeks.map((w, i) => <th key={i}>{ w }</th>)}
                         </tr>
                     </thead>
 
