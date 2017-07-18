@@ -5,7 +5,6 @@ import classnames from 'classnames';
 /*import moment from 'moment';*/
 import './styles.less';
 import RoomsList from '../../components/rooms/rooms';
-import Day from "../../components/day/day";
 
 export default class ReserveRoomPage extends React.Component {
     static path = '/';
@@ -31,7 +30,25 @@ export default class ReserveRoomPage extends React.Component {
                     title: 'Фиолетовая',
                     person: 25
                 }
-            ]
+            ],
+            days: [
+                {
+                    name: 'Понедельник'
+                },
+                {
+                    name: 'Вторник'
+                },
+                {
+                    name: 'Среда'
+                },
+                {
+                    name: 'Четверг'
+                },
+                {
+                    name: 'Пятница'
+                }
+            ],
+            isReserved: false
         }
     }
 
@@ -45,20 +62,19 @@ export default class ReserveRoomPage extends React.Component {
                 <div className='reserve-widget__header'>
                     <h2 className='reserve-widget__title'>Бронирование переговорок</h2>
                 </div>
-                <div className='table'>
-                    <div className='table__row-group'>
-                        <div className='table__row'>
-                            <div className='table__head'>Комната</div>
-                            <div className='table__head'>Month</div>
-                        </div>
-
-                        <RoomsList rooms={this.state.rooms}/>
-                        <tr>
-                            <Day/>
+                <table>
+                    <thead>
+                        <tr className='table__row'>
+                            <th>Комната</th>
+                            <th>Month</th>
+                            <th></th>
                         </tr>
-                    </div>
+                    </thead>
 
-                </div>
+                    <RoomsList rooms={this.state.rooms}/>
+
+
+                </table>
 
             </div>
         );
