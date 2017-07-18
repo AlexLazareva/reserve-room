@@ -51,12 +51,12 @@ export default class ReserveRoomPage extends React.Component {
                 </div>
                 <table>
                     <thead>
-                        <tr className='table__row'>
+                        <tr className='table__row--head'>
                             <th rowSpan='2'>Комната</th>
                             <th className='toolbar' colSpan='5'>
-                                <button className='prev-month'> - </button>
+                                <button className='btn prev-month'> &larr; </button>
                                 <span className='current-date'>Июль</span>
-                                <button className='next-month'> - </button>
+                                <button className='btn next-month'> &rarr; </button>
                             </th>
                         </tr>
                         <tr>

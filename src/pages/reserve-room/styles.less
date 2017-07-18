@@ -18,15 +18,23 @@
 .table {
   display: table;
 
-  &__row-group {
-    display: table-row-group;
-  }
-
-  &__row {
-    display: table-row;
+  &__row--head {
+    color: @dark-gray;
   }
 
   &__head {
     display: table-cell;
   }
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: @dark-gray;
+}
+
+.toolbar {
+  position: relative;
+  background-color: @light-gray;
+  padding: 5px;
 }
