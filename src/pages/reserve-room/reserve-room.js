@@ -2,12 +2,15 @@ import React from 'react';
 /*import { bindAll } from 'lodash';
 import { connect } from 'react-redux';*/
 import classnames from 'classnames';
-/*import moment from 'moment';*/
 import './styles.less';
 import RoomsList from '../../components/rooms/rooms';
 
 export default class ReserveRoomPage extends React.Component {
     static path = '/';
+
+    static propTypes = {
+
+    };
 
     constructor(props){
         super(props);
@@ -31,31 +34,15 @@ export default class ReserveRoomPage extends React.Component {
                     person: 25
                 }
             ],
-            days: [
-                {
-                    name: 'Понедельник'
-                },
-                {
-                    name: 'Вторник'
-                },
-                {
-                    name: 'Среда'
-                },
-                {
-                    name: 'Четверг'
-                },
-                {
-                    name: 'Пятница'
-                }
-            ],
-            isReserved: false
+            m: this.props.moment,
+
         }
     }
 
 
     render() {
-        const { isReserved } = this.state;
-        const reserveHour = classnames('hour', {'is-reserved': isReserved});
+        const { m } = this.state;
+        const weeks = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'];
 
         return (
             <div className='reserve-widget'>
@@ -65,13 +52,21 @@ export default class ReserveRoomPage extends React.Component {
                 <table>
                     <thead>
                         <tr className='table__row'>
-                            <th>Комната</th>
-                            <th>Month</th>
-                            <th></th>
+                            <th rowSpan='2'>Комната</th>
+                            <th className='toolbar' colSpan='5'>
+                                <button className='prev-month'> - </button>
+                                <span className='current-date'>Июль</span>
+                                <button className='next-month'> - </button>
+                            </th>
+                        </tr>
+                        <tr>
+                            { weeks.map((w, i) => <td key={i}>{ w }</td>)}
                         </tr>
                     </thead>
 
-                    <RoomsList rooms={this.state.rooms}/>
+                    <RoomsList
+                        rooms={this.state.rooms}
+                    />
 
 
                 </table>

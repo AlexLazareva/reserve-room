@@ -10,20 +10,26 @@ export default class RoomsList extends Component {
         bindAll(this, ['renderRooms']);
     }
 
+
     renderRooms(item, idx) {
+
         return (
             <tr key={ idx } className='rooms'>
                 <td>
                     <h3 className='rooms__title'>{ item.title }</h3>
                     <p className='rooms__description'>(до { item.person } персон)</p>
                 </td>
+                <Day onClick=""/>
+                <Day/>
+                <Day/>
+                <Day/>
                 <Day/>
             </tr>
         );
     }
 
-    render() {
 
+    render() {
         return (
             <tbody>
                 {this.props.rooms.map(this.renderRooms)}
