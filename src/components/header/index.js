@@ -12,12 +12,10 @@ export default class Header extends React.Component {
                         <h1 className='header__title'>Co-working center</h1>
                     </div>
                     <div className='header__menu'>
-                        <nav>
-                            <ul className='header__list'>
-                                <li className='header__link'><Link to='/' >Бронирование переговорок</Link></li>
-                                <li className='header__link'><Link to='/orders' >Тарифы</Link></li>
-                            </ul>
-                        </nav>
+                        <ul className='header__list'>
+                            <li className='header__link'><Link to='/' >Бронирование переговорок</Link></li>
+                            <li className='header__link'><Link to='/orders' >Тарифы</Link></li>
+                        </ul>
                     </div>
                 </div>
             </header>

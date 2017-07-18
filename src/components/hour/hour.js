@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './style.less';
 
 export default class Hour extends React.Component {
+
+    static propTypes = {
+        hour: PropTypes.any.isRequired
+    };
 
     render() {
         return (

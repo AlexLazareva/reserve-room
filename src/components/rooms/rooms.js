@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { bindAll } from 'lodash';
+import Day from "../../components/day/day";
 import './styles.less';
 
 export default class RoomsList extends Component {
@@ -9,21 +10,30 @@ export default class RoomsList extends Component {
         bindAll(this, ['renderRooms']);
     }
 
+
     renderRooms(item, idx) {
+
         return (
-            <div key={ idx } className='rooms'>
-                <h3 className='rooms__title'>{ item.title }</h3>
-                <p className='rooms__description'>(до { item.person } персон)</p>
-            </div>
+            <tr key={ idx } className='rooms'>
+                <td>
+                    <h3 className='rooms__title'>{ item.title }</h3>
+                    <p className='rooms__description'>(до { item.person } персон)</p>
+                </td>
+                <Day onClick=""/>
+                <Day/>
+                <Day/>
+                <Day/>
+                <Day/>
+            </tr>
         );
     }
 
-    render() {
 
+    render() {
         return (
-            <div>
+            <tbody>
                 {this.props.rooms.map(this.renderRooms)}
-            </div>
+            </tbody>
         );
     }
 }

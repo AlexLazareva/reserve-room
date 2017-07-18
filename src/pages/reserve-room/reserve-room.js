@@ -2,13 +2,15 @@ import React from 'react';
 /*import { bindAll } from 'lodash';
 import { connect } from 'react-redux';*/
 import classnames from 'classnames';
-/*import moment from 'moment';*/
 import './styles.less';
 import RoomsList from '../../components/rooms/rooms';
-import Day from "../../components/day/day";
 
 export default class ReserveRoomPage extends React.Component {
     static path = '/';
+
+    static propTypes = {
+
+    };
 
     constructor(props){
         super(props);
@@ -31,39 +33,43 @@ export default class ReserveRoomPage extends React.Component {
                     title: 'Фиолетовая',
                     person: 25
                 }
-            ]
+            ],
+            m: this.props.moment,
+
         }
     }
 
 
     render() {
-        const { isReserved } = this.state;
-        const reserveHour = classnames('hour', {'is-reserved': isReserved});
+        const { m } = this.state;
+        const weeks = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'];
 
         return (
             <div className='reserve-widget'>
                 <div className='reserve-widget__header'>
                     <h2 className='reserve-widget__title'>Бронирование переговорок</h2>
                 </div>
-                <div className='table'>
-                    <div className='table__row-group'>
-                        <div className='table__row'>
-                            <div className='table__head'>Комната</div>
-                            <div className='table__head'>Month</div>
-                        </div>
-                        <div>
-                            <RoomsList rooms={this.state.rooms}/>
-                            <Day/>
-                            <Day/>
-                            <Day/>
-                            <Day/>
-                            <Day/>
-                        </div>
+                <table>
+                    <thead>
+                        <tr className='table__row'>
+                            <th rowSpan='2'>Комната</th>
+                            <th className='toolbar' colSpan='5'>
+                                <button className='prev-month'> - </button>
+                                <span className='current-date'>Июль</span>
+                                <button className='next-month'> - </button>
+                            </th>
+                        </tr>
+                        <tr>
+                            { weeks.map((w, i) => <td key={i}>{ w }</td>)}
+                        </tr>
+                    </thead>
+
+                    <RoomsList
+                        rooms={this.state.rooms}
+                    />
 
 
-                    </div>
-
-                </div>
+                </table>
 
             </div>
         );
