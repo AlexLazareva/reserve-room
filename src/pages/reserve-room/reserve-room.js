@@ -8,10 +8,6 @@ import RoomsList from '../../components/rooms/rooms';
 export default class ReserveRoomPage extends React.Component {
     static path = '/';
 
-    static propTypes = {
-
-    };
-
     constructor(props){
         super(props);
 
@@ -34,7 +30,7 @@ export default class ReserveRoomPage extends React.Component {
                     person: 25
                 }
             ],
-            m: this.props.moment,
+            m: this.props.moment
 
         }
     }
