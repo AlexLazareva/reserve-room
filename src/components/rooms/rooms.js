@@ -15,7 +15,7 @@ export default class RoomsList extends Component {
 
         return (
             <tr key={ idx } className='rooms'>
-                <td>
+                <td className='rooms__label'>
                     <h3 className='rooms__title'>{ item.title }</h3>
                     <p className='rooms__description'>(до { item.person } персон)</p>
                 </td>
