@@ -28,9 +28,19 @@
 }
 
 .btn {
+  position: absolute;
   background-color: transparent;
   border: none;
   color: @dark-gray;
+  cursor: pointer;
+
+  &__prev-month {
+    left: 0;
+  }
+
+  &__next-month {
+    right: 0;
+  }
 }
 
 .toolbar {
