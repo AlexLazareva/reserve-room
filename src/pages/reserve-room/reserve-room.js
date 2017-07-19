@@ -2,8 +2,9 @@ import React from 'react';
 import { bindAll } from 'lodash';
 /*import { connect } from 'react-redux';*/
 import classnames from 'classnames';
-import './styles.less';
+import { LocalStorageManager } from './../../utils/index';
 import RoomsList from '../../components/rooms/rooms';
+import './styles.less';
 
 export default class ReserveRoomPage extends React.Component {
     static path = '/';
