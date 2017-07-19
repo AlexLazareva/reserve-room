@@ -2,9 +2,9 @@ import config from './../config';
 
 export default class LocalStorageManager {
 
-    get(field) {
+    static get(field) {
 
-        if(this._isExists()) {
+        if(LocalStorageManager._isExists()) {
             const data = JSON.parse(localStorage.getItem(config.localStorage.name));
 
             if(!field) return data;
@@ -16,12 +16,12 @@ export default class LocalStorageManager {
         return undefined;
     }
 
-    set(field, data = {}) {
+    static set(field, data = {}) {
 
         let dataToStorage = {};
 
         if(field) {
-            dataToStorage = this.get();
+            dataToStorage = LocalStorageManager.get();
 
             if(!dataToStorage) dataToStorage = {};
             dataToStorage[ field] = data;
@@ -33,7 +33,7 @@ export default class LocalStorageManager {
         localStorage.setItem(config.localStorage.name, JSON.stringify(dataToStorage));
     }
 
-    _isExists() {
+    static _isExists() {
         return localStorage.getItem(config.localStorage.name) ? true : false;
     }
 }
