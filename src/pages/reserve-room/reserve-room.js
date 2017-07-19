@@ -57,9 +57,9 @@ export default class ReserveRoomPage extends React.Component {
                 <div className='reserve-widget__header'>
                     <h2 className='reserve-widget__title'>Бронирование переговорок</h2>
                 </div>
-                <table>
-                    <thead>
-                        <tr className='table__row--head'>
+                <table className='table'>
+                    <thead className='table__thead'>
+                        <tr className='table__thead-row'>
                             <th rowSpan='2'>Комната</th>
                             <th className='toolbar' colSpan='5'>
                                 <button className='btn btn__prev-month' onClick={ this.prevMonth }> &larr; </button>
