@@ -3,6 +3,7 @@ import config from './../config';
 export default class LocalStorageManager {
 
     get(field) {
+
         if(this._isExists()) {
             const data = JSON.parse(localStorage.getItem(config.localStorage.name));
 
@@ -15,8 +16,21 @@ export default class LocalStorageManager {
         return undefined;
     }
 
-    set() {
+    set(field, data = {}) {
 
+        let dataToStorage = {};
+
+        if(field) {
+            dataToStorage = this.get();
+
+            if(!dataToStorage) dataToStorage = {};
+            dataToStorage[ field] = data;
+
+        } else {
+            dataToStorage = data;
+        }
+
+        localStorage.setItem(config.localStorage.name, JSON.stringify(dataToStorage));
     }
 
     _isExists() {
