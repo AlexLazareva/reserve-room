@@ -53,12 +53,36 @@
 .week {
 
   &__item {
-    min-width: 126px;
+    min-width: 116px;
     font-size: 16px;
     color: @dark-gray;
     text-align: left;
+
+    @media screen {
+      @media (max-width: 768px) {
+        min-width: 100px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 702px) {
+        display: none;
+      }
+    }
+
+    &--short {
+      display: none;
+
+      @media screen {
+        @media (max-width: 702px) {
+          display: table-cell;
+          min-width: 75px;
+        }
+      }
+    }
   }
 }
+
+
 .toolbar {
   position: relative;
   background-color: @light-gray;

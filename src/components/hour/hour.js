@@ -13,29 +13,29 @@ export default class Hour extends React.Component {
     constructor(props) {
         super(props);
 
-        bindAll(this, ['handleBooking']);
+        bindAll(this, ['handleSelectHour']);
 
         this.state = {
-            isBooking: false
+            isSelected: false
         }
     }
 
-    handleBooking() {
-        if(!this.state.isBooking) this.toggle();
+    handleSelectHour() {
+        if(!this.state.isSelected) this.toggle();
     }
 
     toggle() {
-        const isBooking = !this.state.isBooking;
-        this.setState({ isBooking });
+        const isSelected = !this.state.isSelected;
+        this.setState({ isSelected });
     }
 
     render() {
-        const { isBooking } = this.state;
+        const { isSelected } = this.state;
         const { hour } = this.props.hour;
-        const hourClasses = classnames('hour', { 'active': isBooking });
-        LocalStorageManager.set('hour', isBooking);
+        const hourClasses = classnames('hour', { 'active': isSelected });
+        LocalStorageManager.set('hour', isSelected);
         return (
-            <div className={ hourClasses } onClick={this.handleBooking}>
+            <div className={ hourClasses } onClick={this.handleSelectHour}>
                 <span className='hour__value'>{this.props.hour}</span>
                 <span className='reserve-button' />
             </div>

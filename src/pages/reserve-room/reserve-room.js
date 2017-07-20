@@ -16,12 +16,16 @@ export default class ReserveRoomPage extends React.Component {
         this.state = {
             rooms: [
                 {
-                    title: 'Зеленая',
+                    title: 'Желтая',
                     person: 5
                 },
                 {
                     title: 'Красная',
                     person: 15
+                },
+                {
+                    title: 'Зеленая',
+                    person: 5
                 },
                 {
                     title: 'Синяя',
@@ -49,6 +53,7 @@ export default class ReserveRoomPage extends React.Component {
     render() {
         const { m } = this.state;
         const weeks = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'];
+        const shortWeeksDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт'];
 
         return (
             <div className='reserve-widget'>
@@ -67,6 +72,7 @@ export default class ReserveRoomPage extends React.Component {
                         </tr>
                         <tr className='week'>
                             { weeks.map((w, i) => <th className='week__item' key={i}>{ w }</th>)}
+                            { shortWeeksDays.map((w, i) => <th className='week__item week__item--short' key={i}>{ w }</th>)}
                         </tr>
                     </thead>
 
