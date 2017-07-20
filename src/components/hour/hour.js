@@ -37,7 +37,7 @@ export default class Hour extends React.Component {
         return (
             <div className={ hourClasses } onClick={this.handleBooking}>
                 <span className='hour__value'>{this.props.hour}</span>
-                <span className='reserve-button'><i className='fa fa-plus'></i></span>
+                <span className='reserve-button'><i className='fa fa-plus' /></span>
             </div>
         );
     }

@@ -62,11 +62,11 @@ export default class ReserveRoomPage extends React.Component {
                             <th rowSpan='2'>Комната</th>
                             <th className='toolbar' colSpan='5'>
                                 <button className='btn btn__prev-month' onClick={ this.prevMonth }>
-                                    <i className='fa fa-arrow-left'></i>
+                                    <i className='fa fa-arrow-left' />
                                 </button>
                                 <span className='current-date'>Июль</span>
                                 <button className='btn btn__next-month' onClick={ this.nextMonth }>
-                                    <i className='fa fa-arrow-right'></i>
+                                    <i className='fa fa-arrow-right' />
                                 </button>
                             </th>
                         </tr>
