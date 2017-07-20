@@ -28,18 +28,23 @@
 }
 
 .btn {
+  width: 25px;
+  height: 100%;
   position: absolute;
+  top: 0;
   background-color: transparent;
   border: none;
   color: @dark-gray;
   cursor: pointer;
 
   &__prev-month {
-    left: 0;
+    left: 1%;
+    background: url('./img/left-arrow.png') center center no-repeat;
   }
 
   &__next-month {
-    right: 0;
+    right: 1%;
+    background: url('./img/right-arrow.png') center center no-repeat;
   }
 }
 
