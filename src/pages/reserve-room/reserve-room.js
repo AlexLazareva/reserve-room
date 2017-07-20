@@ -31,20 +31,19 @@ export default class ReserveRoomPage extends React.Component {
                     title: 'Фиолетовая',
                     person: 25
                 }
-            ],
-            m: this.props.moment
+            ]
 
         }
     }
 
     prevMonth(event) {
         event.preventDefault();
-        console.log('PrevMonth button clicked!', event.target);
+        alert('PrevMonth button clicked!');
     }
 
     nextMonth(event) {
         event.preventDefault();
-        console.log('NextMonth button clicked!', event.target);
+        alert('NextMonth button clicked!');
     }
 
     render() {
@@ -59,15 +58,15 @@ export default class ReserveRoomPage extends React.Component {
                 <table className='table'>
                     <thead className='table__thead'>
                         <tr className='table__thead-row'>
-                            <th rowSpan='2'>Комната</th>
+                            <th className='table__thead-row--first' rowSpan='2'>Комната</th>
                             <th className='toolbar' colSpan='5'>
                                 <button className='btn btn__prev-month' onClick={ this.prevMonth } />
                                 <span className='current-date'>Июль</span>
                                 <button className='btn btn__next-month' onClick={ this.nextMonth } />
                             </th>
                         </tr>
-                        <tr>
-                            { weeks.map((w, i) => <th key={i}>{ w }</th>)}
+                        <tr className='week'>
+                            { weeks.map((w, i) => <th className='week__item' key={i}>{ w }</th>)}
                         </tr>
                     </thead>
 
