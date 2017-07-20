@@ -1,8 +1,7 @@
 import React from 'react';
 import { bindAll } from 'lodash';
-/*import { connect } from 'react-redux';*/
+import { connect } from 'react-redux';
 import classnames from 'classnames';
-import { LocalStorageManager } from './../../utils/index';
 import RoomsList from '../../components/rooms/rooms';
 import './styles.less';
 
@@ -62,9 +61,13 @@ export default class ReserveRoomPage extends React.Component {
                         <tr className='table__thead-row'>
                             <th rowSpan='2'>Комната</th>
                             <th className='toolbar' colSpan='5'>
-                                <button className='btn btn__prev-month' onClick={ this.prevMonth }> &larr; </button>
+                                <button className='btn btn__prev-month' onClick={ this.prevMonth }>
+                                    <i className='fa fa-arrow-left'></i>
+                                </button>
                                 <span className='current-date'>Июль</span>
-                                <button className='btn btn__next-month' onClick={ this.nextMonth }> &rarr; </button>
+                                <button className='btn btn__next-month' onClick={ this.nextMonth }>
+                                    <i className='fa fa-arrow-right'></i>
+                                </button>
                             </th>
                         </tr>
                         <tr>

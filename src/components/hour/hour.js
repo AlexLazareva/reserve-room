@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import { bindAll } from 'lodash';
-import './style.less';
+import { LocalStorageManager } from './../../utils/index';
+import './styles.less';
 
 export default class Hour extends React.Component {
 
@@ -30,11 +31,13 @@ export default class Hour extends React.Component {
 
     render() {
         const { isBooking } = this.state;
+        const { hour } = this.props.hour;
         const hourClasses = classnames('hour', { 'active': isBooking });
+        LocalStorageManager.set('hour', isBooking);
         return (
             <div className={ hourClasses } onClick={this.handleBooking}>
                 <span className='hour__value'>{this.props.hour}</span>
-                <span className='reserve-button'>&#43;</span>
+                <span className='reserve-button'><i className='fa fa-plus'></i></span>
             </div>
         );
     }
