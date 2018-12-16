@@ -3,16 +3,17 @@
 .day {
   border: 1px solid @light-gray;
   &__column {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
+    flex-basis: 45px;
     width: 50%;
-    min-width: 45px;
+    //min-width: 45px;
     box-sizing: border-box;
 
-    @media screen {
-      @media (max-width: 840px) {
-        display: block;
-        width: 100%;
-      }
-    }
+    //@media screen {
+    //  @media (max-width: 840px) {
+    //    width: 100%;
+    //  }
+    //}
   }
 }
